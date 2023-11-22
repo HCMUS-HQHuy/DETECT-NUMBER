@@ -4,14 +4,14 @@ import numpy as np
 import gzip
 
 def load_mnist(path, kind = 'train'):
-    lables_path = os.path.join(path, '%s-lables-idx1-ubyte.gz' % kind)
-    images_path = os.path.join(path, '%s-images-idx3-ubyte.gz' % kind)
+    lables_path = os.path.join(path, '%s-labels-idx1-ubyte' % kind, '%s-labels-idx1-ubyte' % kind)
+    images_path = os.path.join(path, '%s-images-idx3-ubyte' % kind, '%s-images-idx3-ubyte' % kind)
 
-    with gzip.open(lables_path, 'rb') as lbpath:
+    with open(lables_path, 'rb') as lbpath:
         lbpath.read(8)
         buffer = lbpath.read()
         lables = np.frombuffer(buffer, dtype=np.uint8)
-    with gzip.open(images_path, 'rb') as imgpath:
+    with open(images_path, 'rb') as imgpath:
         imgpath.read(16)
         buffer = imgpath.read()
         images = np.frombuffer(buffer, dtype=np.uint8).reshape(len(lables), 28, 28).astype(np.float64)
