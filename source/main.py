@@ -19,8 +19,8 @@ def load_mnist(path, kind = 'train'):
 
 X_train, y_train = load_mnist('data/', kind = 'train')
 X_test, y_test = load_mnist('data/', kind = 't10k')
-print('Rows: %d, colums: %d' %(X_train.shape[0], X_train.shape[1]))
-print('Rows: %d, colums: %d' %(X_test.shape[0], X_test.shape[1]))
+print('Train: Rows: %d, colums: %d' %(X_train.shape[0], X_train.shape[1]))
+print('Test: Rows: %d, colums: %d' %(X_test.shape[0], X_test.shape[1]))
 
 fig, ax = plt.subplots(nrows = 2, ncols = 5, sharex = True, sharey = True,)
 ax = ax.flatten()
