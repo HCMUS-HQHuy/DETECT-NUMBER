@@ -14,6 +14,6 @@ def Downsample(img):
 def get(data):
    arrayVector=numpy.zeros(data.shape[0], 14*14)
    for i in range(0, data.shape[0]):
-      arrayVector[i]=Downsample(data[i])
+      arrayVector[i]=Downsample(normalize (data[i]))
     
    return arrayVector
