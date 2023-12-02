@@ -1,12 +1,16 @@
-import numpy 
+import numpy as np
 
-def vectorization(img): 
-    vector = numpy.zeros(784)
-    
+def Histogram(img):
+    n0 = img.shape[0]
+    n1 = img.shape[1]
+    vector = np.zeros(256)
+    for i in range(n0):
+        for j in range(n1):
+            vector[img[i, j]] += 1
     return vector
 
 def get(data):
-    arrayVector = numpy.zeros((data.shape[0], data[0].shape[0] * data[1].shape[1]))
+    arrayVector = np.zeros((data.shape[0], 256))
     for i in range(data.shape[0]):
-        arrayVector[i] = vectorization(data[i])
+        arrayVector[i] = Histogram(data[i])
     return arrayVector
