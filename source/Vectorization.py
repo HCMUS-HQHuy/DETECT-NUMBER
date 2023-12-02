@@ -2,6 +2,8 @@ import numpy
 
 def vectorization(img): 
     vector = numpy.zeros(784)
+    img = normalize(img)
+    vector = img.flatten()
     return vector
 
 def get(data):
