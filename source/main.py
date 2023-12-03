@@ -4,8 +4,8 @@ import Downsampling
 import Histogram
 
 def outAns(data1, data2, f):
-    print("vector_train: ", f(data1))
-    print("vector_test : ", f(data2))
+    print("vector_train: ", f(data1).shape)
+    print("vector_test : ", f(data2).shape)
 
 X_train, y_train = load_mnist('data/', kind = 'train')
 X_test, y_test = load_mnist('data/', kind = 't10k')

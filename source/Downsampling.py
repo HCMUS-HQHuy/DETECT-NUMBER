@@ -1,5 +1,5 @@
 import numpy 
-from normalize import normalize
+from Normalize import normalize
 
 def Downsample(img): 
     n=img.shape[0]                      #28 phan tu
@@ -12,8 +12,8 @@ def Downsample(img):
     return vector
 
 def get(data):
-   arrayVector=numpy.zeros(data.shape[0], 14*14)
+   arrayVector=numpy.zeros((data.shape[0], 14*14))
    for i in range(0, data.shape[0]):
-      arrayVector[i]=Downsample(normalize (data[i]))
+      arrayVector[i]=Downsample(normalize(data[i]))
     
    return arrayVector

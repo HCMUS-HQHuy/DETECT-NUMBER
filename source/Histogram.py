@@ -6,7 +6,7 @@ def Histogram(img):
     vector = np.zeros(256)
     for i in range(n0):
         for j in range(n1):
-            vector[img[i, j]] += 1
+            vector[int(img[i, j])] += 1
     return vector
 
 def get(data):
