@@ -1,5 +1,5 @@
 import numpy 
-from Normalize import normalize
+from normalize import normalize
 
 def vectorization(img): 
     vector = numpy.zeros(784)
