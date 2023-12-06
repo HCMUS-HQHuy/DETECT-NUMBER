@@ -1,18 +1,17 @@
+import matplotlib.pyplot as plt
+
 from loadData import load_mnist
 import Vectorization 
 import Downsampling
 import Histogram
+from KNN import KNN_predict
+import random
 
-def outAns(data1, data2, f):
-    print("vector_train: ", f(data1).shape)
-    print("vector_test : ", f(data2).shape)
+data_train, lable_train = load_mnist('data/', kind = 'train')
+data_test, lable_test = load_mnist('data/', kind = 't10k')
 
-X_train, y_train = load_mnist('data/', kind = 'train')
-X_test, y_test = load_mnist('data/', kind = 't10k')
-
-print("Vectorization: ")
-outAns(X_train, X_test, Vectorization.get)
-print("Dowsampling: ")
-outAns(X_train, X_test, Downsampling.get)
-print("Histogram: ")
-outAns(X_train, X_test, Histogram.get)
+pos = random.randint(0, 10000)
+# print(pos)
+sample = data_test[pos]
+print(KNN_predict(Vectorization.get(data_train), lable_train, Vectorization.vectorization(sample), 10))
+print(lable_test[pos])
