@@ -6,7 +6,6 @@ import Vectorization
 import Downsampling
 import Histogram
 from KNN import KNN_predict
-import random
 
 def output(s, f, K):
     predict =  KNN_predict(f(data_train), lable_train, f(data_test), K)
